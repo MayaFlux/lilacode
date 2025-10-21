@@ -1,0 +1,152 @@
+{
+  "name": "lilacode",
+  "displayName": "LilaCode",
+  "description": "Client for Lila REPL server",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:lila.startServer",
+    "onCommand:lila.evalLine",
+    "onCommand:lila.evalSelection",
+    "onCommand:lila.evalBuffer"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "lila.startServer",
+        "title": "Lila: Start Server",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.stopServer",
+        "title": "Lila: Stop Server",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.restartServer",
+        "title": "Lila: Restart Server",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.connect",
+        "title": "Lila: Connect",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.disconnect",
+        "title": "Lila: Disconnect",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.evalLine",
+        "title": "Lila: Evaluate Line",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.evalSelection",
+        "title": "Lila: Evaluate Selection",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.evalBuffer",
+        "title": "Lila: Evaluate Buffer",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.evalNode",
+        "title": "Lila: Evaluate Node",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.showOutput",
+        "title": "Lila: Show Output",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.hideOutput",
+        "title": "Lila: Hide Output",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.clearOutput",
+        "title": "Lila: Clear Output",
+        "category": "Lila"
+      },
+      {
+        "command": "lila.showStatus",
+        "title": "Lila: Show Status",
+        "category": "Lila"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "lila.evalLine",
+        "key": "ctrl+alt+e",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "lila.evalSelection",
+        "key": "ctrl+alt+s",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "lila.evalBuffer",
+        "key": "ctrl+alt+b",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "lila.evalNode",
+        "key": "ctrl+alt+n",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "Lila",
+      "properties": {
+        "lila.host": {
+          "type": "string",
+          "default": "127.0.0.1",
+          "description": "Lila server host"
+        },
+        "lila.port": {
+          "type": "number",
+          "default": 9090,
+          "description": "Lila server port"
+        },
+        "lila.autoStartServer": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically start server when needed"
+        },
+        "lila.autoConnect": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically connect to server"
+        },
+        "lila.serverPath": {
+          "type": "string",
+          "default": "lila_server",
+          "description": "Path to Lila server executable"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p .",
+    "watch": "tsc -watch -p .",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.130",
+    "@types/vscode": "^1.105.0",
+    "typescript": "^5.0.0",
+    "vsce": "^2.15.0"
+  }
+}
