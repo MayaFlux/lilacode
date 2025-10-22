@@ -4,7 +4,7 @@
   "description": "Client for Lila REPL server",
   "version": "0.1.0",
   "engines": {
-    "vscode": "^1.74.0"
+    "vscode": "^1.105.0"
   },
   "categories": [
     "Other"
@@ -148,5 +148,9 @@
     "@types/vscode": "^1.105.0",
     "typescript": "^5.0.0",
     "vsce": "^2.15.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MayaFlux/lilacode"
   }
 }
